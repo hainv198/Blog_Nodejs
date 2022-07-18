@@ -11,3 +11,7 @@ h2 {
   border-radius: 8px;
   color: aliceblue;
   height: 38px; }
+
+.search_form {
+  width: 50%;
+  margin: 0 auto; }
