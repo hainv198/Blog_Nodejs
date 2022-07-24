@@ -83,5 +83,23 @@
 # name của thẻ input là lấy value của thẻ đó và truyền lên url dưới dạng Query ParameternsParameterns
 
 Form có các methor GET, POST
+nhận dữ liệu từ máy chủ về phía clien
 
 # action : the hien chung ta submit o dau url nao
+
+# Method POST
+
+- khi muốn gửi dữ liệu từ clent lên server
+- Phuong thuc send la de gui
+
+FormDate nhân phương thúc req.body ể nhận dữ liệu
+
+# - Mô hình MVC Routes & Controler
+
+- Model View Controller
+- Tách từng file
+- Controller la index(req, res) {
+  res.render('news')
+  }
+- Route chay tu trn xuong thu muc goc de duoi
+- size để lưu những file có tài nguyên kg cụ thể
