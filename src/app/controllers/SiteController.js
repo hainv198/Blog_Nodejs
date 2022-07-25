@@ -1,13 +1,24 @@
+const Product = require('../model/Product')
+
 // function controller
 class SiteController {
     //[GET / news]
     index(req, res) {
-        res.render('home');
+        Product.find({}, (err, products) => {
+            if (!err) {
+                res.json(products);
+                return;
+            }
+            res.status(400).json({
+                error: 'ERROR'
+            });
+        })
+        // res.render('home');
     }
 
     // [GET /news:id ]
     search(req, res) {
-        res.send( 'search')
+        res.send('search')
     }
 }
 
