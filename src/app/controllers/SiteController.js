@@ -1,19 +1,16 @@
 const Product = require('../model/Product')
-
+const { mutipleMongooseToObject } = require('../../util/mongoose')
 // function controller
 class SiteController {
     //[GET / news]
-    index(req, res) {
-        Product.find({}, (err, products) => {
-            if (!err) {
-                res.json(products);
-                return;
-            }
-            res.status(400).json({
-                error: 'ERROR'
-            });
-        })
-        // res.render('home');
+    index(req, res, next) {
+        Product.find({})
+            .then(products => {
+                products = products.map(product => product.toObject());
+                res.render('home', { products })
+            })
+            .catch(error => next(error))
+
     }
 
     // [GET /news:id ]
